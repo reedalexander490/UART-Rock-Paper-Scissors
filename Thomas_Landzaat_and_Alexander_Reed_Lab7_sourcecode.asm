@@ -1,13 +1,5 @@
 ;***********************************************************
 ;*
-;*	This is the TRANSMIT skeleton file for Lab 7 of ECE 375
-;*
-;*  	Rock Paper Scissors
-;* 	Requirement:
-;* 	1. USART1 communication
-;* 	2. Timer/counter1 Normal mode to create a 1.5-sec delay
-;***********************************************************
-;*
 ;*	 Author: Thomas Landzaat and Alexander Reed
 ;*	   Date: 12/4/2024
 ;*
@@ -114,9 +106,6 @@ INIT:
 		ldi mpr, 0xCF ; Load low byte
 		sts UBRR1L, mpr ; UBRR1L in extended I/O space
 
-
-		//ldi mpr, 0b00000000
-		//sts UCSRIA
 		;Enable receiver and transmitter
 		ldi mpr, 0b10011000 //used to be 0b10011000
 		sts UCSR1B, mpr
@@ -1124,4 +1113,5 @@ SCISSORS_OPPEND:
 ;*	Additional Program Includes
 ;***********************************************************
 .include "LCDDriver.asm"		; Include the LCD Driver
+
 
